@@ -48,3 +48,33 @@ function decode(str) {
 
 console.log(decode('craft block argon meter bells brown croon droop'));
 
+function monthYear (month, leapYear) {
+  let days;
+  switch(month) {
+    case 'January': 
+    case 'March':
+    case 'May':
+    case 'July':
+    case 'August':
+    case 'October':
+    case 'December': 
+      days = 31;
+    
+    case 'April':
+    case 'June':
+    case 'September':
+    case 'November':
+      days = 30;
+
+    case 'February':
+      if(leapYear == true) {
+        days = 29;
+      } else {
+        days = 28;
+      }
+  }
+  return `${month} has ${days} days!`;
+}
+
+let month = 'February';
+console.log(monthYear(month, true));
