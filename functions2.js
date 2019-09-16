@@ -11,3 +11,25 @@ function jediName(firstName, lastName) {
 }
 let name = jediName('Aedan', 'Warfield');
 console.log(name);
+
+function beyond(num) {
+  if(num === Infinity) {
+    console.log("And beyond");
+  }
+  else if(num > 0) {
+    console.log("To infinity");
+  }
+  else if(num < 0) {
+    console.log("To negative infinity");
+  }
+  else if (num === 0) {
+    console.log("Staying home");
+  }
+}
+
+
+
+beyond (3);
+beyond (0);
+beyond (-5);
+beyond (Infinity);
