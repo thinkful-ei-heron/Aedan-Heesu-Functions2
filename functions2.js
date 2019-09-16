@@ -14,16 +14,16 @@ console.log(name);
 
 function beyond(num) {
   if(num === Infinity) {
-    console.log("And beyond");
+    console.log('And beyond');
   }
   else if(num > 0) {
-    console.log("To infinity");
+    console.log('To infinity');
   }
   else if(num < 0) {
-    console.log("To negative infinity");
+    console.log('To negative infinity');
   }
   else if (num === 0) {
-    console.log("Staying home");
+    console.log('Staying home');
   }
 }
 
@@ -51,30 +51,67 @@ console.log(decode('craft block argon meter bells brown croon droop'));
 function monthYear (month, leapYear) {
   let days;
   switch(month) {
-    case 'January': 
-    case 'March':
-    case 'May':
-    case 'July':
-    case 'August':
-    case 'October':
-    case 'December': 
-      days = 31;
+  case 'January': 
+  case 'March':
+  case 'May':
+  case 'July':
+  case 'August':
+  case 'October':
+  case 'December': 
+    days = 31;
     
-    case 'April':
-    case 'June':
-    case 'September':
-    case 'November':
-      days = 30;
+  case 'April':
+  case 'June':
+  case 'September':
+  case 'November':
+    days = 30;
 
-    case 'February':
-      if(leapYear == true) {
-        days = 29;
-      } else {
-        days = 28;
-      }
+  case 'February':
+    if(leapYear == true) {
+      days = 29;
+    } else {
+      days = 28;
+    }
   }
   return `${month} has ${days} days!`;
 }
 
 let month = 'February';
 console.log(monthYear(month, true));
+
+function rockPaperScissors () {
+  let choice = prompt('1 = Rock, 2 = Paper 3 = Scissors');
+  let input = parseInt(choice);
+  console.log(input);
+  const randomNo = Math.floor(Math.random() * 3) + 1;
+  console.log(randomNo);
+  try {
+    if (input < 0 && input > 3) {
+      throw new Error ('Must choose either 1, 2 or 3.');
+    }
+    if (input === randomNo) {
+      window.alert('Tie game.');
+    } 
+    else if (input === 1) {
+      if (randomNo === 2) {
+        window.alert('You lost because the computer threw paper'); 
+      } else window.alert('You Win because the computer threw scissors!');
+    }
+    else if (input === 2) {
+      if (randomNo === 3) {
+        window.alert('You lost because the computer threw scissors!');           
+      } else window.alert('You Win because the computer threw rock.');
+    }
+    else if (input === 3) {
+      if (randomNo === 1) {
+        window.alert('You lost because the computer threw rock.');            
+      } else window.alert('You Win because the computer threw paper!');
+    }
+
+  } catch(e) {
+    window.alert(e);
+  }
+}
+    
+
+rockPaperScissors();
